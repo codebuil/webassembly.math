@@ -10,6 +10,18 @@ namespace cripts
 
     internal class Program
     {
+        public static void GravarEmArquivo(string nomeArquivo, string texto)
+        {
+            try
+            {
+                // Grava todo o conteúdo da string 'texto' no arquivo especificado pelo nome 'nomeArquivo'
+                File.WriteAllText(nomeArquivo, texto);
+            }
+            catch (IOException e)
+            {
+                Console.WriteLine($"Erro ao gravar o arquivo {nomeArquivo}: {e.Message}");
+            }
+        }
         public static string Criptografar(string entrada)
         {
             string saida = "";
@@ -41,7 +53,7 @@ namespace cripts
                     string fileContent = File.ReadAllText(filePath);
 
                     // Exibe o conteúdo do arquivo
-                    Console.WriteLine(Criptografar(fileContent));
+                    GravarEmArquivo(args[0]+"x",Criptografar(fileContent));
                 }
                 catch (IOException e)
                 {
