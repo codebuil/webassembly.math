@@ -1,4 +1,4 @@
 # webassembly.math
-graphics and math - a c code than let you program hide you secret on a webassembly file 
+graphics and math - a c code than let you programer hide you secret on a webassembly file 
 
 
